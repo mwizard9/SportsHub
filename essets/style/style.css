@@ -1,0 +1,567 @@
+*{
+    margin: 0%;
+    padding: 0%;
+
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Akaya Kanadaka', cursive;*/
+}
+
+.nav1{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 10px 1px 5px grey;
+    text-align: center;
+
+}
+.nav1 .left{
+    
+    flex-basis: 50%;
+    letter-spacing: 2px;
+   
+}
+.nav1 .left a{
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: bold;
+    margin: 0px 5px;
+
+}
+.nav1 .left a:hover{
+    background-size: auto;
+    color: rgb(21, 228, 114);
+}
+
+.logo{
+    width: 150px;
+   
+    
+}
+
+.right{
+    flex-basis: 50%;
+   
+}
+.right a{
+    font-size: 20px;
+    margin: 0px 10px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+.nav2{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 10px 1px 5px grey;
+    text-align: center;
+}
+
+.n2right{
+    width: 500px;
+    display: flex;
+}
+
+.search-box{
+    width: 80%;
+    height: 20px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #d1d1d1;
+    text-transform: capitalize;
+    background: none;
+    color: #a9a9a9;
+    outline: none;
+}
+
+.search-btn{
+    width: 20%;
+    height: 40px;
+    padding: 10px 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #383838;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.search-box::placeholder{
+    color: #a9a9a9;
+}
+
+.nav2 .n2left,.nav2 .center,.nav2 .n2right{
+    flex-basis: 30%;
+    margin: auto;
+    cursor: pointer;
+}
+.nav2 .n2left i{
+    margin-left: 15px;
+}
+.nav3{
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+}
+
+.nav3 ul{
+    list-style: none;
+    text-align: center;
+
+}
+
+.nav3 ul li{
+    display: inline-block;
+    width: 150px;
+    position: relative;
+    z-index: 99;
+}
+
+.nav3 ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    display: block;
+}
+.nav3 ul li a:hover{
+    color: rgb(182, 29, 88);
+
+}
+
+.nav3 ul li i{
+    margin: 0px 5px;
+}
+
+.nav3 ul ul{
+    position: absolute;
+    top: 70px;
+    left: 0%;
+    display: none;
+}
+
+.nav3 ul ul li{
+    background-color: white;
+
+}
+
+.nepal img{
+    width: 15px;
+}
+.nav3 ul li:hover>ul{
+    display: block;
+}
+
+.featured{
+    width: 100%;
+    height: 120vh;
+    background:linear-gradient(to right,rgba(0,0,0,0.8) 20%,rgba(255,255,255,0.2)),url('img/football.jpg');
+    background-size: cover;
+    background-position: top;
+    position: relative;
+}
+
+.featured-text{
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-family: 'Akaya Kanadaka', cursive;
+
+}
+.featured-text button{
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: rgb(165, 32, 54);
+    margin: 20px 0;
+}
+.latest{
+    padding: 50px 100px;
+}
+.product-intro {
+    text-align: center;
+}
+
+.product-intro h1{
+    color: rgb(199, 24, 132);
+    letter-spacing: 0.2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+
+}
+.product-intro h1 span{
+    color: #234452;
+}
+
+.product-intro p{
+    color: gray;
+    margin: 15px 0;
+}
+.card-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin: 4rem 0;
+    flex-wrap: wrap;
+}
+
+.card-container .card{
+    flex-basis: 20%;
+    padding: 0.8rem;
+    position: relative;
+}
+.card img{
+    width: 100%;
+    transition: 0.5s ease-in-out;
+}
+.card i{
+    color: goldenrod;
+    margin: 10px 0;
+}
+.card button{
+    color: white;
+    background-color: #383838;
+    border: none;
+    outline: none;
+    margin-top: 15px;
+    padding: 5px 20px;
+}
+.card:hover img, .card:hover h1{
+    width: 80%;
+    color: rgb(161, 44, 60);
+}
+.card::before{
+    content: '10%off';
+    width: 25%;
+    height: 20px;
+    line-height: 25px;
+    color: black;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: rgb(190, 21, 63);
+    padding: 0px 4px;
+    transform: rotate(-20deg);
+}
+
+.trends{
+    padding: 50px 100px;
+    background-color: rgba(0,0,0,0.01);
+  
+    
+}
+.trends .swiper {
+    width: 100%;
+    padding: 50px;
+  }
+
+  .trends .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+  }
+
+  .trends .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+footer{
+    background-color: #383838;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 2rem;
+}
+footer div{
+    flex-basis: 30%;
+}
+footer h1{
+    letter-spacing: 0.5rem;
+
+}
+footer h1 span{
+    color: rgb(216, 22, 70);
+}
+
+footer p{
+    font-size: 1rem;
+}
+
+footer i{
+    margin: 0px 5px;
+}
+
+#sidenav{
+    display: none;
+}
+#menubar{
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width:769px){
+
+.nav1{
+    position: relative;
+    z-index: 2;
+    background-color: white;
+
+}
+
+
+.nav2{
+    width: 100%;
+    height: 80px;
+}
+.nav2 .n2left i{
+    margin: 0px;
+    padding: 0px;
+}
+
+.logo{
+    width: 80px;
+    padding: 0px;
+    margin: 0px;  
+}
+.search-box{
+    width: 25%;
+    height: 10px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #d1d1d1;
+    text-transform: capitalize;
+    background: none;
+    color: #a9a9a9;
+    outline: none;
+}
+
+.search-btn{
+    width: 20%;
+    height: 32px;
+    padding: 0px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #383838;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.nav2 .n2left,.nav2 .center,.nav2 .n2right{
+    flex-basis: 25%;
+    margin:0px;
+    padding: 0px;
+    cursor: pointer;
+}
+.nav3{
+    display: none;
+}
+.featured{
+    background-attachment: fixed;
+}
+.latest{
+    padding: 0px 50px;
+}
+.product-intro {
+    text-align: center;
+}
+
+.product-intro h1{
+    color: rgb(199, 24, 132);
+    letter-spacing: 0.2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+
+}
+.product-intro h1 span{
+    color: #234452;
+}
+
+.product-intro p{
+    color: gray;
+    margin: 15px 0;
+}
+.card-container{
+  
+    cursor: pointer;
+    margin: 2rem 0;
+}
+
+.card-container .card{
+    flex-basis: 40%;
+    padding: 0.8rem;
+    position: relaive;
+    text-align: center;
+}
+.card img{
+    width: 100%;
+    transition: 0.5s ease-in-out;
+}
+.card i{
+    color: goldenrod;
+    margin: 10px 0;
+}
+.card button{
+    color: white;
+    background-color: #383838;
+    border: none;
+    outline: none;
+    margin-top: 15px;
+    padding: 5px 20px;
+}
+
+.trends{
+    padding: 20px 50px;
+    background-color: rgba(0,0,0,0.01);
+  
+    
+}
+.trends .swiper {
+    width: 100%;
+    padding: 50px;
+  }
+
+  .trends .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+
+  .trends .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+footer div{
+      flex-basis: 50%;
+      margin:20px 0;
+  }
+
+  #sidenav{
+    display: block;
+}
+
+#menubar{
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%,-50%);
+    z-index: 99;
+    background-color: rgb(236, 9, 96);
+    color: white;
+    font-size: 2rem;
+    padding: 20px 10px;
+    animation: animate 5s ease infinite;
+}
+#sidenav{
+    width: 0px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: #a9a9a9;
+    padding-top: 70px;
+    display: block;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+#sidenav ul{
+    list-style: none;
+
+}
+
+#sidenav ul li{
+    display: block;
+    width: 200px;
+    position: relative;
+    z-index: 99;
+    margin: 10px 20px;
+}
+
+#sidenav ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    display: block;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+#sidenav ul li a:hover{
+    color: rgb(182, 29, 88);
+
+}
+#sidenav ul li i{
+    color: white;
+    margin: 0px 5px;
+}
+
+#sidenav ul ul{
+    position: absolute;
+    top: 70px;
+    left: 0%;
+    display: none;
+}
+
+#sidenav ul ul li{
+   border-bottom: 1px solid white;
+
+}
+
+.nepal img{
+    width: 15px;
+}
+#sidenav ul li:hover>ul{
+    display: block;
+}
+
+
+@keyframes animate{
+    0%{
+        background-color: aqua;
+    }
+
+    100%{
+        background-color: #aff50b;
+
+    }
+}
+
+
+   
+}
