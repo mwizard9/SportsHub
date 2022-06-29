@@ -1,4 +1,5 @@
 {% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,28 +67,24 @@
                     Football<i class="fa fa-caret-down"></i></a>
                     <ul>
                         <li><a href="#">International Teams</a></li>
-                        <li><a href="#">Premier league</a></li>
-                        <li><a href="#">GermanBundesliga</a></li>
-                        <li><a href="#">LaLiga</a></li>
-                        <li><a href="#">Others</a></li>
+                        <li><a href="#">clubs</a></li>
+                       
                     </ul>
                 </li>
                 <li><a href="#"><i class='far fa-cricket fa-9x' style='color:#e83e8c'></i>
                     Cricket<i class="fa fa-caret-down"></i></a>
                     <ul>
                         <li><a href="#">International Teams</a></li>
-                        <li><a href="#">IPL</a></li>
-                        <li><a href="#">BBL</a></li>
-                        <li><a href="#">PSL</a></li>
-                        <li><a href="#">Others</a></li>
+                        <li><a href="#">clubs</a></li>
+                       
                     </ul>
                 </li>
                 <li><a href="#"><i class="fas fa-basketball-ball"></i>
                     Basketball<i class="fa fa-caret-down"></i></a>
                     <ul>
                         <li><a href="#">International Teams</a></li>
-                        <li><a href="#">NBA</a></li>
-                        <li><a href="#">Others</a></li>
+                        <li><a href="#">clubs</a></li>
+                      
                     </ul>
                 </li>
             </ul>
@@ -103,28 +100,24 @@
             Football<i class="fa fa-caret-down"></i></a>
             <ul>
                 <li><a href="#">International Teams</a></li>
-                <li><a href="#">Premier league</a></li>
-                <li><a href="#">GermanBundesliga</a></li>
-                <li><a href="#">LaLiga</a></li>
-                <li><a href="#">Others</a></li>
+                <li><a href="#">clubs</a></li>
+              
             </ul>
         </li>
         <li><a href="#"><i class='far fa-cricket fa-9x' style='color:#e83e8c'></i>
             Cricket<i class="fa fa-caret-down"></i></a>
             <ul>
                 <li><a href="#">International Teams</a></li>
-                <li><a href="#">IPL</a></li>
-                <li><a href="#">BBL</a></li>
-                <li><a href="#">PSL</a></li>
-                <li><a href="#">Others</a></li>
+                <li><a href="#">clubs</a></li>
+               
             </ul>
         </li>
         <li><a href="#"><i class="fas fa-basketball-ball"></i>
             Basketball<i class="fa fa-caret-down"></i></a>
             <ul>
                 <li><a href="#">International Teams</a></li>
-                <li><a href="#">NBA</a></li>
-                <li><a href="#">Others</a></li>
+                <li><a href="#">clubs</a></li>
+                
             </ul>
         </li>
     </ul>
@@ -149,11 +142,13 @@
             <P>Welcome guys</P>
         </div>
         <div class="card-container">
+
+            {% for sport in Sports %}
                     <div class="card">
             <div>
-                <img src="{% static 'images/real.png' %}" alt="Real">
+                <img src="{{sport.img.url}}" alt="Real">
             </div>
-            <h1>jersey</h1>
+            <h1>{{sport.name}}</h1>
             <span>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
@@ -161,118 +156,13 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
             </span>
-            <p>Rs.3500</p>
+            <p>{{sport.price}}</p>
             <button>Add to cart</button>
         </div>
-        <div class="card">
-            <div>
-                <img src="img/anjal.png" alt="Anjol">
-            </div>
-            <h1>jersey</h1>
-            <span>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </span>
-            <p>Rs.3500</p>
-            <button>Add to cart</button>
-        </div>
-        <div class="card">
-            <div>
-                <img src="img/city.png" alt="Real">
-            </div>
-            <h1>jersey</h1>
-            <span>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </span>
-            <p>Rs.3500</p>
-            <button>Add to cart</button>
-        </div>
-        <div class="card">
-            <div>
-                <img src="img/FCB.png" alt="Real">
-            </div>
-            <h1>jersey</h1>
-            <span>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-            </span>
-            <p>Rs.3500</p>
-            <button>Add to cart</button>
-        </div>
-            
-    </div>
-    <div class="card-container">
-    <div class="card">
-        <div>
-            <img src="img/gunne.png" alt="Real">
-        </div>
-        <h1>jersey</h1>
-        <span>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-        </span>
-        <p>Rs.3500</p>
-        <button>Add to cart</button>
-    </div>
-    <div class="card">
-        <div>
-            <img src="img/panda.png" alt="Real">
-        </div>
-        <h1>jersey</h1>
-        <span>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-        </span>
-        <p>Rs.3500</p>
-        <button>Add to cart</button>
-    </div>
-    <div class="card">
-        <div>
-            <img src="img/pare.png" alt="Real">
-        </div>
-        <h1>jersey</h1>
-        <span>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-        </span>
-        <p>Rs.3500</p>
-        <button>Add to cart</button>
+        
+        {% endfor %}
+
     
-</div>
-<div class="card">
-    <div>
-        <img src="img/tiku.png" alt="Real">
-    </div>
-    <h1>jersey</h1>
-    <span>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-    </span>
-    <p>Rs.3500</p>
-    <button>Add to cart</button>
-</div>
     </div>
 
     </section>
