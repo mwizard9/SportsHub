@@ -16,16 +16,11 @@
     <header>
     <nav class="nav1">
         <div class="left">
-            {% if user.is_authenticated %}
-            <p>Hello,{{user.first_name}}</p>
-            <a href="logout">Logout</a>
-             
-            {% else %}
-
+          
+           
             <a href="register">Register</a>
             <a href="login">Login</a>
 
-            {% endif %}   
         </div>
   
             <div class="right">

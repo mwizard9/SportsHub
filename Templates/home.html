@@ -26,11 +26,18 @@
 <body>
     <header>
     <nav class="nav1">
+       
         <div class="left">
+            <ul>
 
-            <a href="login.html">Logout</a>   
+
+                <li> Hello, {{user.first_name}}</li>
+	            <li> <a href="logout">Logout</a></li>
+
+               
+           </ul>
+        
         </div>
-  
             <div class="right">
         
             
@@ -50,7 +57,7 @@
 
             </div>
             <div class="center">
-                <img class="logo" src="{% static 'MWizard.png' %" alt="logo"> 
+                <h1>Sports<span>Hub</span></h1>
 
             </div>
             <div class="n2right">
