@@ -208,11 +208,12 @@
 
   
     <div class="card-container">
+        {% for Trend in Trends %}
     <div class="card">
         <div>
-            <img src="img/football1.jpg" alt="Real">
+            <img src="{{Trend.img.url}}" alt="Real">
         </div>
-        <h1>jersey</h1>
+        <h1>{{Trend.name}}</h1>
         <span>
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
@@ -220,55 +221,11 @@
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
         </span>
-        <p>Rs.3500</p>
+        <p>{{Trend.price}}</p>
         <button>Add to cart</button>
     </div>
-    <div class="card">
-        <div>
-            <img src="img/ncric.jpg" alt="Real">
-        </div>
-        <h1>jersey</h1>
-        <span>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-        </span>
-        <p>Rs.3500</p>
-        <button>Add to cart</button>
-    </div>
-    <div class="card">
-        <div>
-            <img src="img/nep.jpg" alt="Real">
-        </div>
-        <h1>jersey</h1>
-        <span>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-        </span>
-        <p>Rs.3500</p>
-        <button>Add to cart</button>
-    
-</div>
-<div class="card">
-    <div>
-        <img src="img/ckit.png" alt="Real">
-    </div>
-    <h1>jersey</h1>
-    <span>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-    </span>
-    <p>Rs.3500</p>
-    <button>Add to cart</button>
-</div>
+    {% endfor %}
+   
     </div>
     </section>
 
@@ -282,22 +239,22 @@
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="img/football1.jpg">
+            <img src="{% static 'images/football1.jpg' %}">
           </div>
           <div class="swiper-slide">
-            <img src="img/football2.jpg">
+            <img src="{% static 'images/football2.jpg' %}">
           </div> 
           <div class="swiper-slide">
-            <img src="img/football3.jpeg">
+            <img src="{% static 'images/anjal.png' %}">
           </div>
           <div class="swiper-slide">
-            <img src="img/football.jpg">
+            <img src="{% static 'images/football.jpg' %}">
           </div>
           <div class="swiper-slide">
-            <img src="img/bootball4.jpg">
+            <img src="{% static 'images/tiku.png' %}">
           </div>
           <div class="swiper-slide">
-            <img src="img/boot.jpg">
+            <img src="{% static 'images/boot.jpg' %}">
           </div>
           <div class="swiper-pagination"></div>
         </div>
