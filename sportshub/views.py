@@ -6,8 +6,10 @@ from.models import Trend
 # Create your views here.
 def front(request):
     sports = sport.objects.all()
-    Trends = Trend.objects.all()
+   
 
     return render(request,'home.html',{'sports':sports})
 
-    return render(request,'home.html',{'Trends':Trends})
+def front(request):
+     Trends = Trend.objects.all()
+     return render(request,'home.html',{'Trends':Trends})

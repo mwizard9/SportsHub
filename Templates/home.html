@@ -206,12 +206,12 @@
             <P>Welcome guys</P>
         </div>
         <div class="card-container">
-        {% for trend in sports %}
+        {% for trends in sports %}
         <div class="card">
 <div>
-    <img src="{{trend.img.url}}" alt="Real">
+    <img src="{{Trend.img.url}}" alt="Real">
 </div>
-<h1>{{Trend.name}}</h1>
+<h1>{{trend.name}}</h1>
 <span>
     <i class="fa fa-star"></i>
     <i class="fa fa-star"></i>
@@ -219,7 +219,7 @@
     <i class="fa fa-star"></i>
     <i class="fa fa-star"></i>
 </span>
-<p>{{Trend.price}}</p>
+<p>{{trend.price}}</p>
 <button>Add to cart</button>
 </div>
 
