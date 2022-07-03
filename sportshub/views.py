@@ -10,6 +10,4 @@ def front(request):
     sports = sport.objects.all()
     Trends = Trend.objects.all()
 
-    return render(request,'home.html',{'sports':sports})
-    
-    return render(request,'home.html',{'Trends':Trends})
+    return render(request,'home.html',{'sports':sports ,'Trends':Trends})
