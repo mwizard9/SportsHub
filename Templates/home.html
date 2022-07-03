@@ -205,26 +205,29 @@
             <h1>Trand<span>ing</span></h1>
             <P>Welcome guys</P>
         </div>
+        <div class="card-container">
+        {% for trend in sports %}
+        <div class="card">
+<div>
+    <img src="{{trend.img.url}}" alt="Real">
+</div>
+<h1>{{Trend.name}}</h1>
+<span>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+</span>
+<p>{{Trend.price}}</p>
+<button>Add to cart</button>
+</div>
+
+{% endfor %}
 
   
     <div class="card-container">
-        {% for Trend in Trends %}
-    <div class="card">
-        <div>
-            <img src="{{Trend.img.url}}" alt="Real">
-        </div>
-        <h1>{{Trend.name}}</h1>
-        <span>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-        </span>
-        <p>{{Trend.price}}</p>
-        <button>Add to cart</button>
-    </div>
-    {% endfor %}
+   
    
     </div>
     </section>
