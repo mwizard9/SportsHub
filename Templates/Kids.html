@@ -1,0 +1,29 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<h2 id="nepali-football">kid's sports meterials available here</h2>
+
+<section class="latest">
+   
+    <div class="card-container">
+
+        {% for kid in kids %}
+                <div class="card">
+        <div>
+            <img src="{{kid.img.url}}" alt="Real">
+        </div>
+        <h3>{{kid.name}}</h3>
+       
+        <p><strong>Rs:{{kid.price}}</strong></p>
+        
+    </div>
+    
+    {% endfor %}
+
+
+</div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<h1 id="nepali-football">Nepali National Team Jersey</h1>
+
+<section class="latest">
+   
+    <div class="card-container">
+
+        {% for Nepal in nepals %}
+                <div class="card">
+        <div>
+            <img src="{{Nepal.img.url}}" alt="Real">
+        </div>
+        <h3>{{Nepal.name}}</h3>
+       
+        <p><strong>Rs:{{Nepal.price}}</strong></p>
+        
+    </div>
+    
+    {% endfor %}
+
+
+</div>
+
+</section>
+
+<h1 id="nepali-football">Nepali Club's Jersey</h1>
+
+<section class="latest">
+   
+    <div class="card-container">
+
+        {% for Nepal in nepals %}
+                <div class="card">
+        <div>
+            <img src="{{Nepal.img.url}}" alt="Real">
+        </div>
+        <h3>{{Nepal.name}}</h3>
+       
+        <p><strong>Rs:{{Nepal.price}}</strong></p>
+        
+    </div>
+    
+    {% endfor %}
+
+
+</div>
+
+</section>
+
+
+{% endblock %}
