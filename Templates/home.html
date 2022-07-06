@@ -4,6 +4,20 @@
 <html lang="en">
 <head>
     <style>
+        .card-container .card{
+            margin: 10px;
+            padding: 15px;
+        }
+        #nepali-football{
+            margin-top: 20px;
+            color: white;
+            background-color: black;
+            
+            text-align: center;
+           
+            
+            
+        }
         .center{
             display: flex;
             justify-content: center;
@@ -92,9 +106,9 @@
 
         <nav class="nav3">
             <ul>
-                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                <li class="nepal"><a href="#"><img src="{% static 'images/nep.png' %}">Nepali</a></li>
-                <li><a href="#"><i class="fa fa-user"></i>Kids</a></li>
+                <li><a href="{% url 'front' %}"><i class="fa fa-home"></i>Home</a></li>
+                <li class="nepal"><a href="{% url 'nepal' %}"><img src="{% static 'images/nep.png' %}">Nepali</a></li>
+                <li><a href="{% url 'Kids' %}"><i class="fa fa-user"></i>Kids</a></li>
                 <li><a href="#"><i class="fa fa-soccer-ball-o"></i>
                     Football<i class="fa fa-caret-down"></i></a>
                     <ul>
@@ -157,6 +171,8 @@
 </section>
 <i class="fa fa-anchor" id="menubar"></i>
 
+{% block content %}
+
 
 
 
@@ -211,7 +227,7 @@
 <div>
     <img src="{{Trend.img.url}}" alt="Real">
 </div>
-<h1>{{trend.name}}</h1>
+<h1>{{Trend.name}}</h1>
 <span>
     <i class="fa fa-star"></i>
     <i class="fa fa-star"></i>
@@ -219,7 +235,7 @@
     <i class="fa fa-star"></i>
     <i class="fa fa-star"></i>
 </span>
-<p>{{trend.price}}</p>
+<p>{{Trend.price}}</p>
 <button>Add to cart</button>
 </div>
 
@@ -263,6 +279,8 @@
         </div>
     </section>
 
+
+    {% endblock %}
     <!--footer-->
     <footer>
         <div>
