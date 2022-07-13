@@ -15,22 +15,15 @@ def CartAdd(request, product_id):
         cd = form.cleaned_data
         cart.add(product=product, quantity=cd['quantity'],
                                   update_quantity=cd['update'])
-    return redirect('cart:CartDetail')
+    return redirect('cart:Cart_detail')
 
 def CartRemove(request, product_id):
     cart = Cart(request)
-    product = get_object_or_404(Product, id=product_id)
+    product = get_object_or_404(sport, id=product_id)
     cart.remove(product)
-    return redirect('cart:CartDetail')
+    return redirect('cart:Cart_detail')
 
 def CartDetail(request):
     cart = Cart(request)
-    for item in cart:
-        item['update_quantity_form'] = CartAddProductForm(
-                                        initial={
-                                            'quantity': item['quantity'],
-                                            'update': True
-                                        })
-    cupon_apply_form = CuponApllyForm()
-    return render(request, 'cart/detail.html',
-                 {'cart': cart, 'cupon_apply_form': cupon_apply_form})
+    return render(request, 'cart/detail.html',{'cart':cart})
+                
