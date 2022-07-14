@@ -10,14 +10,14 @@
     </div>
     <div class="col-sm-8">
       <h1>{{ sport.name }}</h1>
-      <h2><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h2>
+     
       <p class="price">{{ sport.price }}</p>
-      <form action="{% url "cart:CartAdd" product.id %}" method="post" >
+      <form action="{% url "cart:CartAdd" sport.id %}" method="post" >
         {{ cart_product_form }}
         {% csrf_token %}
         <input type="submit" value="Add to Cart">
       </form>
-      <span>{{ product.description | linebreaks}}</span>
+      <span>{{ sport.desc | linebreaks}}</span>
     </div>
   </div>
 {% endblock %}
