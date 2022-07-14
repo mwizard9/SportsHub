@@ -198,7 +198,10 @@
             {% for sport in sports %}
                     <div class="card">
             <div>
-                <img src="{{sport.img.url}}" alt="Real">
+                <a href="{{ sport.get_absolute_url }}">
+                    <img src="{{sport.img.url}}" alt="Real">
+                </a>
+               
             </div>
             <h1>{{sport.name}}</h1>
             <span>
