@@ -7,9 +7,9 @@ from .forms import CartAddProductForm
 
 
 @require_POST
-def CartAdd(request, product_id):
+def CartAdd(request, sport_id):
     cart = Cart(request)
-    product = get_object_or_404(sport, id=product_id)
+    product = get_object_or_404(sport, id=sport_id)
     form = CartAddProductForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
@@ -17,9 +17,9 @@ def CartAdd(request, product_id):
                                   update_quantity=cd['update'])
     return redirect('cart:cart_detail')
 
-def CartRemove(request, product_id):
+def CartRemove(request, sport_id):
     cart = Cart(request)
-    product = get_object_or_404(sport, id=product_id)
+    product = get_object_or_404(sport, id=sport_id)
     cart.remove(product)
     return redirect('cart:cart_detail')
 
