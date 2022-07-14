@@ -15,15 +15,15 @@ def CartAdd(request, product_id):
         cd = form.cleaned_data
         cart.add(product=product, quantity=cd['quantity'],
                                   update_quantity=cd['update'])
-    return redirect('cart:Cart_detail')
+    return redirect('cart:cart_detail')
 
 def CartRemove(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(sport, id=product_id)
     cart.remove(product)
-    return redirect('cart:Cart_detail')
+    return redirect('cart:cart_detail')
 
-def CartDetail(request):
+def cart_details(request):
     cart = Cart(request)
     return render(request, 'cart/detail.html',{'cart':cart})
                 

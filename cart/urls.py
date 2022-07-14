@@ -1,9 +1,10 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
+app_name = 'cart'
 
-urlpatterns = [
-    url(r'^$', views.CartDetail, name='Cart_detail'),
-    url(r'^remove/(?P<product_id>\d+)/$', views.CartRemove, name='CartRemove'),
-    url(r'^add/(?P<product_id>\d+)/$', views.CartAdd, name='CartAdd'),
+urlpatterns=[
+    path('',views.cart_details,name='cart_details'),
+    path('add/<int:product_id>/',views.CartAdd,name='CartAdd'),
+    path('remove/<int:product_id>/',views.CartRemove,name='CartRemove'),
 ]
