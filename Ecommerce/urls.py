@@ -23,7 +23,7 @@ urlpatterns = [
     path('cart/',include('cart.urls',namespace='cart')),
     path('',include('front.urls')),
     
-    path('home',include('sportshub.urls')),
+    path('home/',include('sportshub.urls')),
 
 ]
 urlpatterns = urlpatterns + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

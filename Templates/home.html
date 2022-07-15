@@ -212,9 +212,10 @@
                 <i class="fa fa-star"></i>
             </span>
             <p>{{sport.price}}</p>
-            <a href="detail.html">
-            <button action="">Add to cart</button>
-            </a>
+            <form action="home" method="POST">
+                {% csrf_token %}
+                <input hidden type="text" name="sport" value="{{sport.id}}">
+                <input type="submit" class="add-to-cart" value="Add To Cart">
         </div>
         
         {% endfor %}

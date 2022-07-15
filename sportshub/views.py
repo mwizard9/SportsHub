@@ -1,12 +1,19 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
+from requests import request
 from cart.forms import CartAddProductForm
 from.models import sport
 from.models import Trend
 from.models import Nepal
 from.models import kid
+from django.views import View
 
 # Create your views here.
+class Home(View):
+
+    def post(self_ , request):
+        sport=request.POST.get('sport')
+        print(sport)
      
 
 def front(request):
