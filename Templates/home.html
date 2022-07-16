@@ -211,7 +211,7 @@
             <p>{{sport.price}}</p>
             <form action="home" method="POST">
                 {% csrf_token %}
-                <input type="text" name="product" value='{{sport.id}}'>
+                <input type="text" name='product' value='{{sport.id}}'>
                 <input type="submit" class="add-to-cart" value="Add To Cart">
         </div>
         
