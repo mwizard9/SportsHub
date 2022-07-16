@@ -198,10 +198,7 @@
             {% for sport in sports %}
                     <div class="card">
             <div>
-                <a href="{{ sport.get_absolute_url }}">
                     <img src="{{sport.img.url}}" alt="Real">
-                </a>
-               
             </div>
             <h1>{{sport.name}}</h1>
             <span>
@@ -214,7 +211,7 @@
             <p>{{sport.price}}</p>
             <form action="home" method="POST">
                 {% csrf_token %}
-                <input hidden type="text" name="sport" value="{{sport.id}}">
+                <input type="text" name="product" value='{{sport.id}}'>
                 <input type="submit" class="add-to-cart" value="Add To Cart">
         </div>
         
