@@ -16,10 +16,10 @@ def is_in_cart(sport , cart):
     return False
 
 @register.filter(name='cart_quantity')
-def cart_quantity(product  , cart):
+def cart_quantity(sport  , cart):
     keys = cart.keys()
     for id in keys:
-        if int(id) == product.id:
+        if int(id) == sport.id:
             return cart.get(id)
     return 0;
 

@@ -15,11 +15,22 @@ class Home(View):
         sports = sport.objects.all()
         Trends = Trend.objects.all()
         product = request.POST.get('product')
+        remove = request.POST.get('remove')
         cart = request.session.get('cart')
         if cart:
             quantity = cart.get(product)
-            if quantity:
-                cart[product] = quantity+1
+            if quantity<=1:
+                if remove:
+                    if quantity<=1:
+                        cart.pop(product)
+                    else:
+                        cart[product] = quantity-1
+
+                    cart[product] = quantity-1
+
+                else:
+                    cart[product] = quantity+1
+
             else:
                 cart[product]=1
 
@@ -33,6 +44,9 @@ class Home(View):
         return render(request,'home.html',{'sports':sports ,'Trends':Trends})
 
     def get(self , request):
+        cart=request.session.get('cart')
+        if not cart:
+            request.session.cart = {}
         products = None
         request.session.get('cart').clear()
 

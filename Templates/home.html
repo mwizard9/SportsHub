@@ -216,18 +216,34 @@
 
             {{sport | is_in_cart:request.session.cart}}
 
-            <div class="card-footer p-0 row no-gutters">
+            <div class="card-footer p-0 no-gutters">
+
+                {% if sport|is_in_cart:request.session.cart %}
+                <div class="row no-gutters">
+                    <form action="home" class="col-2 " method="post">
+                        {% csrf_token %}
+                        <input hidden type="text" name='product' value='{{sport.id}}'>
+                        <input hidden type="text" name='remove' value='True'>
+                        <input type="submit" value=" - " class="btn btn-block btn-secondary">
+                    </form>
+                    <div class="text-center col">{{sport|cart_quantity:request.session.cart}} in Cart</div>
+                    <form action="home" class="col-2 " method="post">
+                        {% csrf_token %}
+                        <input hidden type="text" name='product' value='{{sport.id}}'>
+                        <input type="submit" value=" + " class="btn btn-block btn-secondary">
+                    </form>
+                </div>
+
+                {% else %}
+
                 <form action="home" method="POST" class="btn-block">
                     {% csrf_token %}
                     <input hidden type="text" name='product' value='{{sport.id}}'>
                     <input type="submit" class="float-right btn btn-light border btn-sm" value="Add To Cart">
                 </form>
+                {% endif %}
 
-                <div class="row" hidden>
-                    <input type="submit" value="-" class="col-2 btn btn-block btn-secondary">
-                    <div class="text-center col">2 in Cart</div>
-                    <input type="submit" value="+" class="col-2 btn btn-block btn-secondary">
-                </div>
+     
             </div>
 
         </div>
