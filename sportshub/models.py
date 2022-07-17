@@ -9,6 +9,10 @@ class sport(models.Model):
     price = models.IntegerField()
     offer = models.BooleanField(default=False)
 
+    @staticmethod
+    def get_sports_by_id(ids):
+        return sport.objects.filter(id__in =ids)
+
 class Trend(models.Model):
     name=models.CharField(max_length=100)
     img=models.ImageField(upload_to='pics')
@@ -25,4 +29,7 @@ class kid(models.Model):
     name=models.CharField(max_length=100)
     img=models.ImageField(upload_to='pics')
     price = models.IntegerField()
+
+
+
    

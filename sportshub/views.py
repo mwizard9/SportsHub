@@ -8,11 +8,15 @@ from.models import Nepal
 from.models import kid
 from django.views import View
 
+
+
 # Create your views here.
 class Cart(View):
     def get(self , request):
-        print(request.session.get('cart'))
-        return render(request , 'cart.html')
+        ids=list(request.session.get('cart').keys())
+        sports = sport.get_sports_by_id(ids)
+        print(sports)
+        return render(request , 'cart.html' ,{'sports' : sports})
 
 class Home(View):
 
