@@ -19,14 +19,12 @@ class Home(View):
         cart = request.session.get('cart')
         if cart:
             quantity = cart.get(product)
-            if quantity<=1:
+            if quantity:
                 if remove:
                     if quantity<=1:
                         cart.pop(product)
                     else:
                         cart[product] = quantity-1
-
-                    cart[product] = quantity-1
 
                 else:
                     cart[product] = quantity+1
