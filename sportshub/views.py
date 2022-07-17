@@ -9,6 +9,11 @@ from.models import kid
 from django.views import View
 
 # Create your views here.
+class Cart(View):
+    def get(self , request):
+        print(request.session.get('cart'))
+        return render(request , 'cart.html')
+
 class Home(View):
 
     def post(self , request):
@@ -65,4 +70,6 @@ def nepal(request):
 def Kids(request):
     kids = kid.objects.all()
     return render(request,'Kids.html',{'kids':kids})
+
+
 
