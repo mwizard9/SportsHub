@@ -200,7 +200,7 @@
         <div class="card-container">
 
             {% for sport in sports %}
-                    <div class="card">
+                    <div class="card" id="{{sport.id}}">
             <div>
                     <img src="{{sport.img.url}}" alt="Real">
             </div>
@@ -220,14 +220,14 @@
 
                 {% if sport|is_in_cart:request.session.cart %}
                 <div class="row no-gutters">
-                    <form action="home" class="col-2 " method="post">
+                    <form action="home#{{sport.id}}" class="col-2 " method="post">
                         {% csrf_token %}
                         <input hidden type="text" name='product' value='{{sport.id}}'>
                         <input hidden type="text" name='remove' value='True'>
                         <input type="submit" value=" - " class="btn btn-block btn-secondary">
                     </form>
                     <div class="text-center col">{{sport|cart_quantity:request.session.cart}} in Cart</div>
-                    <form action="home" class="col-2 " method="post">
+                    <form action="home#{{sport.id}}" class="col-2 " method="post">
                         {% csrf_token %}
                         <input hidden type="text" name='product' value='{{sport.id}}'>
                         <input type="submit" value=" + " class="btn btn-block btn-secondary">
@@ -236,7 +236,7 @@
 
                 {% else %}
 
-                <form action="home" method="POST" class="btn-block">
+                <form action="home#{{sport.id}}" method="POST" class="btn-block">
                     {% csrf_token %}
                     <input hidden type="text" name='product' value='{{sport.id}}'>
                     <input type="submit" class="float-right btn btn-light border btn-sm" value="Add To Cart">
