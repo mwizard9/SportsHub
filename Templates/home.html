@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
     <style>
         .table-cart{
             width: 100%;
@@ -212,12 +214,24 @@
             </span>
             <p>{{sport.price}}</p>
 
-            {{product | is_in_cart}}
-            <form action="home" method="POST">
-                {% csrf_token %}
-                <input type="text" name='product' value='{{sport.id}}'>
-                <input type="submit" class="add-to-cart" value="Add To Cart">
+            {{sport | is_in_cart:request.session.cart}}
+
+            <div class="card-footer p-0 row no-gutters">
+                <form action="home" method="POST" class="btn-block">
+                    {% csrf_token %}
+                    <input hidden type="text" name='product' value='{{sport.id}}'>
+                    <input type="submit" class="float-right btn btn-light border btn-sm" value="Add To Cart">
+                </form>
+
+                <div class="row" hidden>
+                    <input type="submit" value="-" class="col-2 btn btn-block btn-secondary">
+                    <div class="text-center col">2 in Cart</div>
+                    <input type="submit" value="+" class="col-2 btn btn-block btn-secondary">
+                </div>
+            </div>
+
         </div>
+        
         
         {% endfor %}
 
