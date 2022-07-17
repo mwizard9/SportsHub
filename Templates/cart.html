@@ -5,8 +5,8 @@
 {% load cart %}
 <div class="cart-conainer">
     <div class="border rounded p-4 m-4">
-        {{sports}}
-        <p class="display-4 pl-4 ml-4">Your Cart</p>
+       
+        <h3 class="display-4 pl-4 ml-4">Your Cart</h3>
         <hr>
         <table class="table">
             <thead>
@@ -39,7 +39,7 @@
                 <tr>
                     <th colspan="4"></th>
                     <th class="" colspan="">Total</th>
-                    <th>{{products|total_cart_price:request.session.cart}}</th>
+                    <th>{{sports|total_cart_price:request.session.cart}}</th>
                 </tr>
             </tfoot>
         </table>
@@ -92,5 +92,6 @@
     </div>
 
 </div>
+
 
 {% endblock %}
