@@ -13,7 +13,7 @@ from django.views import View
 # Create your views here.
 class Cart(View):
     def get(self , request):
-        ids=list(request.session.get('cart').keys())
+        ids = list(request.session.get('cart').keys())
         sports = sport.get_sports_by_id(ids)
         print(sports)
         return render(request , 'cart.html' ,{'sports' : sports})
@@ -74,6 +74,8 @@ def nepal(request):
 def Kids(request):
     kids = kid.objects.all()
     return render(request,'Kids.html',{'kids':kids})
+
+
 
 
 
