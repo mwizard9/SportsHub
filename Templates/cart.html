@@ -26,9 +26,9 @@
                     <td>{{forloop.counter}}</td>
                     <td><img style="height: 80px;" class="rounded-circle" src="{{sport.img.url}}" alt=""></td>
                     <td>{{sport.name}}</td>
-                    <td>{{sport.price|currency}}</td>
+                    <td>{{sport.price}}</td>
                     <td>{{sport|cart_quantity:request.session.cart}}</td>
-                    <td>{{sport|price_total:request.session.cart|currency}}</td>
+                    <td>{{sport|price_total:request.session.cart}}</td>
                 </tr>
 
                 {% endfor %}
@@ -39,7 +39,7 @@
                 <tr>
                     <th colspan="4"></th>
                     <th class="" colspan="">Total</th>
-                    <th>{{products|total_cart_price:request.session.cart|currency}}</th>
+                    <th>{{products|total_cart_price:request.session.cart}}</th>
                 </tr>
             </tfoot>
         </table>

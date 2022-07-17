@@ -25,14 +25,14 @@ def cart_quantity(sport  , cart):
 
 
 @register.filter(name='price_total')
-def price_total(product  , cart):
-    return product.price * cart_quantity(product , cart)
+def price_total(sport  , cart):
+    return sport.price * cart_quantity(sport , cart)
 
 
 @register.filter(name='total_cart_price')
-def total_cart_price(products , cart):
+def total_cart_price(sports , cart):
     sum = 0 ;
-    for p in products:
+    for p in sports:
         sum += price_total(p , cart)
 
     return sum
