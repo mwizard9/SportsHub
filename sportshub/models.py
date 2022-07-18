@@ -32,7 +32,7 @@ class kid(models.Model):
     img=models.ImageField(upload_to='pics')
     price = models.IntegerField()
 
-class Customer(models.Model):
+class customer(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     phone = models.CharField(max_length=15)
@@ -45,22 +45,22 @@ class Customer(models.Model):
     @staticmethod
     def get_customer_by_email(email):
         try:
-            return Customer.objects.get(email=email)
+            return customer.objects.get(email=email)
         except:
             return False
 
 
     def isExists(self):
-        if Customer.objects.filter(email = self.email):
+        if customer.objects.filter(email = self.email):
             return True
 
         return  False
 
 
-class Order(models.Model):
+class order(models.Model):
     sport = models.ForeignKey(sport,
                                 on_delete=models.CASCADE)
-    customer = models.ForeignKey(Customer,
+    customer = models.ForeignKey(customer,
                                  on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     price = models.IntegerField()
@@ -74,7 +74,7 @@ class Order(models.Model):
 
     @staticmethod
     def get_orders_by_customer(customer_id):
-        return Order.objects.filter(customer=customer_id).order_by('-date')
+        return order.objects.filter(customer=customer_id).order_by('-date')
     
 
 
