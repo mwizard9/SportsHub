@@ -82,9 +82,9 @@ class CheckOut(View):
                           phone=phone,
                           quantity=cart.get(str(Sport.id)))
 
+            Order.save()
 
-
-            print(Order.placeOrder());
+        request.session['cart']={}
 
             
 
