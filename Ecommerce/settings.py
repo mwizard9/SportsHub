@@ -71,6 +71,7 @@ TEMPLATES = [
 
             'libraries':{
                 'cart': 'templatetags.cart',
+                'custom_filter': 'templatetags.cart',
             
             },
         },

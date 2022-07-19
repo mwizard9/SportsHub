@@ -78,8 +78,8 @@ class order(models.Model):
         self.save()
 
     @staticmethod
-    def get_orders_by_customer(customer_id):
-        return order.objects.filter(customer=customer_id).order_by('-date')
+    def get_orders_by_customer1(user_id):
+        return order.objects.filter(customer1 = user_id).order_by('-date')
     
 
 

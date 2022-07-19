@@ -91,6 +91,13 @@ class CheckOut(View):
 
         return redirect('cart')
 
+class Order(View):
+    def get(self , request):
+        customer2 = request.user
+        Orders=order.get_orders_by_customer1(customer2)
+        print(Orders)
+        return render(request , 'order.html' , {'orders' : Orders})
+
 
 def front(request):
     sports = sport.objects.all()
