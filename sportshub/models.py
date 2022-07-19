@@ -1,5 +1,7 @@
+from collections import UserList
 from django.db import models
 from django.core.validators import MinLengthValidator
+from django.contrib.auth.models import User
 import datetime
 
 # Create your models here.
@@ -14,6 +16,9 @@ class sport(models.Model):
     @staticmethod
     def get_sports_by_id(ids):
         return sport.objects.filter(id__in =ids)
+
+    def __str__(self):
+        return self.name
 
 class Trend(models.Model):
     name=models.CharField(max_length=100)
@@ -60,7 +65,7 @@ class customer(models.Model):
 class order(models.Model):
     sport = models.ForeignKey(sport,
                                 on_delete=models.CASCADE)
-    customer = models.ForeignKey(customer,
+    customer1 = models.ForeignKey(User,
                                  on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
     price = models.IntegerField()
