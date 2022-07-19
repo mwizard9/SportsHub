@@ -15,6 +15,7 @@ urlpatterns = [
     path('home',Home.as_view(),name="home"),
     path('nepal',views.nepal,name="nepal"),
     path('Kids',views.Kids,name="Kids"),
+     path('logout',views.logout,name="logout")
 
    
     

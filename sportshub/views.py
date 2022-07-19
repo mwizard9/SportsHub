@@ -10,6 +10,7 @@ from.models import order
 from django.views import View
 from .models import customer
 from.models import sport
+from django.contrib.auth.models import User, auth
 
 
 
@@ -86,6 +87,8 @@ class CheckOut(View):
 
         request.session['cart']={}
 
+
+
             
 
 
@@ -115,6 +118,11 @@ def nepal(request):
 def Kids(request):
     kids = kid.objects.all()
     return render(request,'Kids.html',{'kids':kids})
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect("/")
 
 
 
