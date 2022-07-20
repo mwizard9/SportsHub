@@ -15,6 +15,13 @@ from requests import delete
 class Category(models.Model):
      name=models.CharField(max_length=100)
 
+     @staticmethod
+     def get_all_categories():
+        return Category.objects.all()
+
+     def __str__(self):
+        return self.name
+
 class sport(models.Model):
     name=models.CharField(max_length=100)
     img=models.ImageField(upload_to='pics')
@@ -30,6 +37,16 @@ class sport(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_all_sports():
+        return sport.objects.all()
+
+    @staticmethod
+    def get_all_sports_by_categoryid(category_id):
+        if category_id:
+            return sport.objects.filter(category = category_id)
+        else:
+            return sport.get_all_products();
    
 
 class customer(models.Model):

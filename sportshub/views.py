@@ -8,6 +8,7 @@ from.models import order
 from django.views import View
 from .models import customer
 from.models import sport
+from.models import Category
 from django.contrib.auth.models import User, auth
 
 
@@ -19,6 +20,8 @@ class Cart(View):
         sports = sport.get_sports_by_id(ids)
         print(sports)
         return render(request , 'cart.html' ,{'sports' : sports})
+
+
 
 class Home(View):
 
@@ -58,6 +61,21 @@ class Home(View):
             request.session.cart = {}
         products = None
         request.session.get('cart').clear()
+
+def store(request):
+    sports = None
+    categories = Category.get_all_categories()
+    categoryID = request.GET.get('category')
+    if categoryID:
+        sports = sport.get_all_sports_by_categoryid(categoryID)
+    else:
+        sports = sport.get_all_sports()
+
+    data = {}
+    data['sports'] = sports
+    data['categories'] = categories
+    return render(request, 'home.html' , data)
+ 
 
 class CheckOut(View):
     def post(self , request):
