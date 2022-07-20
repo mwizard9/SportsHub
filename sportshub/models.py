@@ -1,8 +1,11 @@
 from collections import UserList
+from unicodedata import category
 from django.db import models
 from django.core.validators import MinLengthValidator
 from django.contrib.auth.models import User
 import datetime
+
+from requests import delete
 
 # Create your models here.
 
@@ -20,26 +23,16 @@ class sport(models.Model):
     def __str__(self):
         return self.name
 
-class Trend(models.Model):
-    name=models.CharField(max_length=100)
-    img=models.ImageField(upload_to='pics')
-    desc = models.TextField()
-    price = models.IntegerField()
-    offer = models.BooleanField(default=False)
 
-class Nepal(models.Model):
-    name=models.CharField(max_length=100)
-    img=models.ImageField(upload_to='pics')
-    price = models.IntegerField()
-
-class kid(models.Model):
-    name=models.CharField(max_length=100)
-    img=models.ImageField(upload_to='pics')
-    price = models.IntegerField()
+class Category(models.Model):
+     name=models.CharField(max_length=100)
+   
 
 class customer(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
+    category = models.ForeignKey(Category,
+                                on_delete=models.CASCADE,default=1)
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     password = models.CharField(max_length=500)

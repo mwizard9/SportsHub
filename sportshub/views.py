@@ -3,9 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from requests import request
 from .models import sport
-from .models import Trend
-from.models import Nepal
-from.models import kid
+
 from.models import order
 from django.views import View
 from .models import customer
@@ -26,7 +24,7 @@ class Home(View):
 
     def post(self , request):
         sports = sport.objects.all()
-        Trends = Trend.objects.all()
+        
         product = request.POST.get('product')
         remove = request.POST.get('remove')
         cart = request.session.get('cart')
@@ -52,7 +50,7 @@ class Home(View):
         request.session['cart'] = cart
         print('cart' ,request.session['cart'])
 
-        return render(request,'home.html',{'sports':sports ,'Trends':Trends})
+        return render(request,'home.html',{'sports':sports })
 
     def get(self , request):
         cart=request.session.get('cart')
@@ -104,20 +102,20 @@ class Order(View):
 
 def front(request):
     sports = sport.objects.all()
-    Trends = Trend.objects.all()
+   
   
 
-    return render(request,'home.html',{'sports':sports ,'Trends':Trends})
+    return render(request,'home.html',{'sports':sports })
 
 def nepal(request):
-    nepals = Nepal.objects.all()
+    
 
-    return render(request,'nepal.html',{'nepals':nepals})
+    return render(request,'nepal.html')
 
 
 def Kids(request):
-    kids = kid.objects.all()
-    return render(request,'Kids.html',{'kids':kids})
+    
+    return render(request,'Kids.html')
 
 
 def logout(request):
