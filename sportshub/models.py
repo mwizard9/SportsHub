@@ -9,9 +9,17 @@ from requests import delete
 
 # Create your models here.
 
+
+
+
+class Category(models.Model):
+     name=models.CharField(max_length=100)
+
 class sport(models.Model):
     name=models.CharField(max_length=100)
     img=models.ImageField(upload_to='pics')
+    category = models.ForeignKey(Category,
+                                on_delete=models.CASCADE,default=1)
     desc = models.TextField()
     price = models.IntegerField()
     offer = models.BooleanField(default=False)
@@ -22,17 +30,12 @@ class sport(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class Category(models.Model):
-     name=models.CharField(max_length=100)
    
 
 class customer(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    category = models.ForeignKey(Category,
-                                on_delete=models.CASCADE,default=1)
+    
     phone = models.CharField(max_length=15)
     email = models.EmailField()
     password = models.CharField(max_length=500)
