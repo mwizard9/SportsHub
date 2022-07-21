@@ -135,10 +135,23 @@ class Order(View):
 
 def front(request):
     sports = sport.objects.all()
+    sports = None
+    categories = Category.get_all_categories()
+    categoryID = request.GET.get('category')
+    if categoryID:
+        sports = sport.get_all_sports_by_categoryid(categoryID)
+    else:
+        sports = sport.get_all_sports()
+
+    data = {}
+    data['sports'] = sports
+    data['categories'] = categories
+    return render(request, 'home.html' , data)
+
    
   
 
-    return render(request,'home.html',{'sports':sports })
+    
 
 def nepal(request):
     
