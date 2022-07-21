@@ -72,8 +72,7 @@ class Home(View):
         cart=request.session.get('cart')
         if not cart:
             request.session.cart = {}
-        products = None
-        request.session.get('cart').clear()
+        
 
         
         sports = None
