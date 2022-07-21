@@ -145,8 +145,9 @@
         </nav>
 
         <nav class="nav3">
+            <a href="{% url 'front' %}">Home</a>
            {% for category in categories %}
-           <a href="store?category={{category.id}}">{{category.name}}</a>
+           <a href="home?category={{category.id}}">{{category.name}}</a>
            {% endfor %}
         </nav>
 
@@ -154,20 +155,10 @@
 <section id="sidenav">
     <ul>
         <li><a href="{% url 'front' %}"><i class="fa fa-home"></i>Home</a></li>
-        <li class="nepal"><a href="{% url 'nepal' %}"><img src="{% static 'images/nep.png' %}">Nepali</a></li>
-        <li><a href="{% url 'Kids' %}"><i class="fa fa-user"></i>Kids</a></li>
-        <li><a href="#"><i class="fa fa-soccer-ball-o"></i>
-            Football</a>
-            
-        </li>
-        <li><a href="#"><i class='far fa-cricket fa-9x' style='color:#e83e8c'></i>
-            Cricket</a>
-           
-        </li>
-        <li><a href="#"><i class="fas fa-basketball-ball"></i>
-            Basketball</a>
-           
-        </li>
+        {% for category in categories %}
+        <li><a href="home?category={{category.id}}">{{category.name}}</a></li>
+        {% endfor %}  
+        
     </ul>
 
 </section>

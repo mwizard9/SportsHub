@@ -53,6 +53,19 @@ class Home(View):
         request.session['cart'] = cart
         print('cart' ,request.session['cart'])
 
+        sports = None
+        categories = Category.get_all_categories()
+        categoryID = request.GET.get('category')
+        if categoryID:
+            sports = sport.get_all_sports_by_categoryid(categoryID)
+        else:
+            sports = sport.get_all_sports()
+
+        data = {}
+        data['sports'] = sports
+        data['categories'] = categories
+        return render(request, 'home.html' , data)
+
         return render(request,'home.html',{'sports':sports })
 
     def get(self , request):
@@ -62,19 +75,21 @@ class Home(View):
         products = None
         request.session.get('cart').clear()
 
-def store(request):
-    sports = None
-    categories = Category.get_all_categories()
-    categoryID = request.GET.get('category')
-    if categoryID:
-        sports = sport.get_all_sports_by_categoryid(categoryID)
-    else:
-        sports = sport.get_all_sports()
+        
+        sports = None
+        categories = Category.get_all_categories()
+        categoryID = request.GET.get('category')
+        if categoryID:
+            sports = sport.get_all_sports_by_categoryid(categoryID)
+        else:
+            sports = sport.get_all_sports()
 
-    data = {}
-    data['sports'] = sports
-    data['categories'] = categories
-    return render(request, 'home.html' , data)
+        data = {}
+        data['sports'] = sports
+        data['categories'] = categories
+        return render(request, 'home.html' , data)
+
+
  
 
 class CheckOut(View):

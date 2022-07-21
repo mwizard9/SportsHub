@@ -16,7 +16,7 @@ urlpatterns = [
     path('nepal',views.nepal,name="nepal"),
     path('Kids',views.Kids,name="Kids"),
      path('logout',views.logout,name="logout"),
-     path('store', views.store , name='store'),
+     
 
    
     
