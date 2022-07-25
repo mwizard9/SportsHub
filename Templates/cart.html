@@ -3,6 +3,7 @@
 {% block content %}
 
 {% load cart %}
+{% load static %}
 <div class="cart-conainer">
     <div class="border rounded p-4 m-4">
        
@@ -79,6 +80,21 @@
                     <label for="">Phone</label>
                     <input type="text" name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
                   </div>
+                  <div class="form-group">
+                    <label for="payment">Choose a Payment Method:</label>
+                    <select name="paymetn" id="payment">
+                      <option value="E-Sewa">E-Sewa</option>
+                      <option value="Khalti">Khalti</option>
+                      <option value="PhonePay">PhonePay</option>
+                      <option value="ImePay">ImePay</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="">Payment</label>
+                    <input type="text" name="address" id="" class="form-control" placeholder="Total in NRs" aria-describedby="helpId">
+                    
+                  </div>
+
 
                   <input type="submit" class="btn float-right btn-outline-info col-lg-6" value="Check out">
             </form>
