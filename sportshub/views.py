@@ -122,7 +122,7 @@ class CheckOut(View):
             
 
 
-        return redirect('cart')
+        return redirect('payment' )
 
 class Order(View):
     def get(self , request):
@@ -166,6 +166,9 @@ def Kids(request):
 def logout(request):
     auth.logout(request)
     return redirect("/")
+
+def payment(request):
+    return render(request,'payment.html')
 
 
 
