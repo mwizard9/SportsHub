@@ -229,7 +229,7 @@ body{
 .card-container .card{
     flex-basis: 20%;
     padding: 0.8rem;
-    position: relative;
+    
 }
 .card img{
     width: 100%;
@@ -251,19 +251,7 @@ body{
     width: 80%;
     color: rgb(161, 44, 60);
 }
-.card::before{
-    content: '10%off';
-    width: 25%;
-    height: 20px;
-    line-height: 25px;
-    color: black;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    background-color: rgb(190, 21, 63);
-    padding: 0px 4px;
-    transform: rotate(-20deg);
-}
+
 
 .trends{
     padding: 50px 100px;

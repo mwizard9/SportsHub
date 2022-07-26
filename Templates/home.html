@@ -65,23 +65,22 @@
             justify-content: center;
         }
   
-        #sports{color: white;
-            background-color: black;
-             width: 30%;
-             border: 1px solid black;
-             border-radius: 10px;
-             
-           }
-           #hub{
-             
-            background-color: red;
-             background-size: 10px;
-             width: 30%;
-             border: 1px solid black;
-             border-radius: 10px;
-           }
+        
    li{
     list-style: none;
+   }
+   #navbar{
+    overflow: hidden;
+    background-color: #333;
+    
+   }
+   #navbar a{
+    display: block;
+   }
+   .sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
    }
     </style>
     
@@ -152,7 +151,7 @@
             </div>
         </nav>
 
-        <nav class="nav3">
+        <nav class="nav3" id="navbar">
             <a href="{% url 'front' %}">Home</a>
            {% for category in categories %}
            <a href="?category={{category.id}}">{{category.name}}</a>
@@ -339,6 +338,20 @@
           }
           
       </script>
+      <script>
+      window.onscroll = function() {myFunction()};
+
+      var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
 
 
 
