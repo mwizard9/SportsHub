@@ -6,8 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <style>
-        
-    </style>
+            form{
+                margin-top: 10%;
+                text-align: center;
+                
+            }
+            input[type=text],input[type=password],input[type=email]{
+                width: 30%;
+                padding: 10px 40px; 
+                font-size: 15px;
+                outline: none;
+                border-radius: 30px;
+                border-left: 0;
+                border-top: 0;
+                border-right: 0;
+                border-bottom: 1px solid #999;
+                outline: none;
+                background: transparent;
+                
+            }
+    
+            input[type=submit]{
+                width: 20%;
+                
+      padding: 10px 30px;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+      background: linear-gradient(to right, #ff105f, #ffad06);
+      border: 0;
+      outline: none;
+      border-radius: 30px;
+            }
+            form a{
+                padding: 10px;
+                text-decoration: none;
+                font-size: 15px;
+                color: black;
+                border: 1px solid black;
+                border-radius: 20px;
+                background: linear-gradient(to right, #ff105f, #ffad06);
+            }
+        </style>
 </head>
 <body>
     <form action="register" method="post">
@@ -17,8 +57,10 @@
         <input type="text" name="username" placeholder="User name"><br>
         <input type="email" name="email" placeholder="Email"><br>
         <input type="password" name="password" placeholder="Password"><br>
-        <input type="password" name="conform_password" placeholder="conform password"><br>
-        <input type="submit" value="Register">
+        <input type="password" name="conform_password" placeholder="conform password"><br><br>
+        <input type="submit" value="Sign Up">  <br>
+        <a href="{% url 'login' %}">Login</a> 
+       
     </form>
     <div>
         {% for message in messages %}
