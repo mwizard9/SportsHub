@@ -322,6 +322,37 @@
           },
         });
       </script>
+      <script>
+        function display(){
+            var x = document.getElementById('payment').value;
+
+            if(x=="E-Sewa"){
+                document.getElementById('esewa').style.display="block"
+                document.getElementById('khalti').style.display="none"
+                document.getElementById('phonepay').style.display="none"
+                document.getElementById('imepay').style.display="none"
+            }
+
+            else if(x=="Khalti"){
+                document.getElementById('esewa').style.display="none"
+                document.getElementById('khalti').style.display="block"
+                document.getElementById('phonepay').style.display="none"
+                document.getElementById('imepay').style.display="none"
+            }
+            else if(x=="PhonePay"){
+                document.getElementById('esewa').style.display="none"
+                document.getElementById('khalti').style.display="none"
+                document.getElementById('phonepay').style.display="block"
+                document.getElementById('imepay').style.display="none"
+            }
+            else if(x=="ImePay"){
+                document.getElementById('esewa').style.display="none"
+                document.getElementById('khalti').style.display="none"
+                document.getElementById('phonepay').style.display="none"
+                document.getElementById('imepay').style.display="block"
+            }
+        }
+      </script>
 
       <script>
           var sidenav= document.getElementById('sidenav');

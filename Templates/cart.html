@@ -82,12 +82,35 @@
                   </div>
                   <div class="form-group">
                     <label for="payment">Choose a Payment Method:</label>
-                    <select name="paymetn" id="payment">
+                    <select name="paymetn" id="payment" onclick="display();">
+                      <option value="">Select</option>
                       <option value="E-Sewa">E-Sewa</option>
                       <option value="Khalti">Khalti</option>
                       <option value="PhonePay">PhonePay</option>
                       <option value="ImePay">ImePay</option>
                     </select>
+                    <br>
+                    <div id="esewa" style="display: none;">
+                      
+                      <input type="text" name="phone" id="" class="form-control" placeholder="E-Sewa ID" aria-describedby="helpId">
+                      <input type="password" name="phone" id="" class="form-control" placeholder="password" aria-describedby="helpId">
+                    </div>
+                    <div id="khalti" style="display: none;">
+                      
+                      <input type="text" name="phone" id="" class="form-control" placeholder="Khalti ID" aria-describedby="helpId">
+                      <input type="password" name="phone" id="" class="form-control" placeholder="password" aria-describedby="helpId">
+                    </div>
+                    <div id="phonepay" style="display: none;">
+                      
+                      <input type="text" name="phone" id="" class="form-control" placeholder="PhonePay ID" aria-describedby="helpId">
+                      <input type="password" name="phone" id="" class="form-control" placeholder="password" aria-describedby="helpId">
+                    </div>
+                    <div id="imepay" style="display: none;">
+                      
+                      <input type="text" name="phone" id="" class="form-control" placeholder="ImePay ID" aria-describedby="helpId">
+                      <input type="password" name="phone" id="" class="form-control" placeholder="password" aria-describedby="helpId">
+                    </div>
+
                   </div>
                   
                   <div class="form-group">
