@@ -28,7 +28,14 @@
             <form action='payment' method="POST">
                 {% csrf_token %}
                 
-                 <img src="{% static 'images/Payment-success.png' %}" alt="success" height="400px" width="400px">
+                 <img src="{% static 'images/Payment-success.png' %}" alt="success" height="400px" width="400px"><br>
+                 Name : {{user.first_name}} {{user.last_name}} <br>
+                 Total Payment: Rs:{{sports|total_cart_price:request.session.cart}}<br>
+                 <div class="form-group">
+                    <label for="">Payment</label>
+                    <input type="submit" name="address" class="form-control" value="Rs:{{sports|total_cart_price:request.session.cart}}" aria-describedby="helpId">
+                    
+                  </div>
 
 
                  <a href="{% url 'home' %}">Go Back TO Home</a>
