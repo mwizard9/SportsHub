@@ -134,6 +134,44 @@ class Order(View):
 
 def front(request):
     sports = sport.objects.all()
+    product = request.POST.get('product')
+    remove = request.POST.get('remove')
+    cart = request.session.get('cart')
+    if cart:
+        quantity = cart.get(product)
+        if quantity:
+            if remove:
+                if quantity<=1:
+                    cart.pop(product)
+                else:
+                    cart[product] = quantity-1
+
+            else:
+                cart[product] = quantity+1
+
+        else:
+            cart[product]=1
+
+    else:
+        cart = {}
+        cart[product] = 1
+
+    request.session['cart'] = cart
+    print('cart' ,request.session['cart'])
+
+    sports = None
+    categories = Category.get_all_categories()
+    categoryID = request.GET.get('category')
+    if categoryID:
+        sports = sport.get_all_sports_by_categoryid(categoryID)
+    else:
+        sports = sport.get_all_sports()
+
+    data = {}
+    data['sports'] = sports
+    data['categories'] = categories
+
+    
     sports = None
     categories = Category.get_all_categories()
     categoryID = request.GET.get('category')
