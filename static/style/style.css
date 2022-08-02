@@ -41,7 +41,7 @@ body{
 
 .logo{
     width: 150px;
-   
+   height: 85px;
     
 }
 
@@ -312,6 +312,7 @@ footer i{
 #menubar{
     display: none;
 }
+
 
 
 
